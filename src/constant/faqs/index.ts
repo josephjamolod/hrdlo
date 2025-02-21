@@ -1,0 +1,15 @@
+export const faqs = [
+  { id: 1, question: "FAQ 제목입니다." },
+  { id: 2, question: "FAQ 제목입니다." },
+  { id: 3, question: "FAQ 제목입니다." },
+  { id: 4, question: "FAQ 제목입니다." },
+  { id: 5, question: "FAQ 제목입니다." },
+  { id: 6, question: "FAQ 제목입니다." },
+  { id: 7, question: "FAQ 제목입니다." },
+  { id: 8, question: "FAQ 제목입니다." },
+  { id: 9, question: "FAQ 제목입니다." },
+  { id: 10, question: "FAQ 제목입니다." },
+  { id: 11, question: "FAQ 제목입니다." },
+  { id: 12, question: "FAQ 제목입니다." },
+  { id: 13, question: "FAQ 제목입니다." },
+];
