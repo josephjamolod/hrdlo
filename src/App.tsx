@@ -10,6 +10,7 @@ import HRDLOGuide from "./pages/HRDLOGuide";
 import Announcements from "./pages/Announcements";
 import AnnouncementDetail from "./pages/AnnouncementDetail";
 import FAQ from "./pages/FAQ";
+import FAQDetail from "./pages/FAQDetail";
 import CourseManagement from "./pages/CourseManagement";
 
 function App() {
@@ -21,7 +22,10 @@ function App() {
           <Route index element={<Announcements />} />
           <Route path=":id" element={<AnnouncementDetail />} />
         </Route>
-        <Route path="/faq" element={<FAQ />} />
+        <Route path="/faq">
+          <Route index element={<FAQ />} />
+          <Route path=":id" element={<FAQDetail />} />
+        </Route>
         <Route path="/course-management" element={<CourseManagement />} />
       </Route>
     )
