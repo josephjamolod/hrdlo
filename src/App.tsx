@@ -8,6 +8,7 @@ import {
 import RootLayout from "./layout/RootLayOut";
 import HRDLOGuide from "./pages/HRDLOGuide";
 import Announcements from "./pages/Announcements";
+import AnnouncementDetail from "./pages/AnnouncementDetail";
 import FAQ from "./pages/FAQ";
 import CourseManagement from "./pages/CourseManagement";
 
@@ -16,7 +17,10 @@ function App() {
     createRoutesFromElements(
       <Route element={<RootLayout />}>
         <Route index element={<HRDLOGuide />} />
-        <Route path="/announcements" element={<Announcements />} />
+        <Route path="/announcements">
+          <Route index element={<Announcements />} />
+          <Route path=":id" element={<AnnouncementDetail />} />
+        </Route>
         <Route path="/faq" element={<FAQ />} />
         <Route path="/course-management" element={<CourseManagement />} />
       </Route>

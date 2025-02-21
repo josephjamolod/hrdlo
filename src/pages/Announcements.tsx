@@ -2,6 +2,7 @@ import Navigation from "../components/navigation";
 import { announcements } from "../constant/announcementData";
 import { IoSearchOutline } from "react-icons/io5";
 import styles from "../styles/Announcements.module.css";
+import { Link } from "react-router-dom";
 
 function Announcements() {
   return (
@@ -33,7 +34,9 @@ function Announcements() {
                 <td className={styles.titleCell}>{announcement.title}</td>
                 <td>{announcement.date}</td>
                 <td>
-                  <button className={styles.arrowButton}>→</button>
+                  <Link to={`/announcements/${announcement.id}`}>
+                    <button className={styles.arrowButton}>→</button>
+                  </Link>
                 </td>
               </tr>
             ))}
