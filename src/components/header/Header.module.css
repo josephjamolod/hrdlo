@@ -106,3 +106,56 @@
 .activeLink .icon[alt="HRDLO"] {
   filter: brightness(0) invert(1); /* Keeps it white when active */
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.logoContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.rightButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.rightButtons button {
+  display: flex;
+  padding: 0.5rem;
+  border: none;
+  background: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.rightButtons button:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.5s ease;
+  border-radius: 2px;
+}
+
+.separator {
+  margin: -1rem;
+  border: 1px solid #383838;
+  height: 16px;
+}

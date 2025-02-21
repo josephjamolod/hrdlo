@@ -6,6 +6,7 @@ import HrdloIcon from "../../assets/svg/hrdlo.svg";
 import faqIcon from "../../assets/svg/faq.svg";
 import announcementIcon from "../../assets/svg/announcement.svg";
 import courseManagementIcon from "../../assets/svg/management.svg";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,23 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <header className={styles.header}>
       {/* Menu Button */}
       <button className={styles.menuBtn} onClick={toggleMenu}>
         <span>☰</span>
       </button>
+
+      {/* Center Logo */}
+      <div className={styles.logoContainer}>
+        <img src={logo} alt="HRDLO Logo" className={styles.logo} />
+      </div>
+
+      {/* Right Buttons */}
+      <div className={styles.rightButtons}>
+        <button>출강기관별(이용)</button>
+        <hr />
+        <button>내 로그아웃</button>
+      </div>
 
       {/* Side Navigation */}
       <div className={`${styles.sidenav} ${isMenuOpen ? styles.open : ""}`}>
@@ -95,7 +108,7 @@ const Header = () => {
       {isMenuOpen && (
         <div className={styles.overlay} onClick={toggleMenu}></div>
       )}
-    </div>
+    </header>
   );
 };
 
