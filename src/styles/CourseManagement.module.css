@@ -1,8 +1,9 @@
 .container {
+  padding: 1rem;
   width: 100%;
-  max-width: 1400px;
-  margin: 3rem auto 0;
-  padding: 0 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .title {
@@ -71,8 +72,15 @@
   background-color: #af6868;
 }
 
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .table {
   width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   border: 1px solid #eee;
   margin-top: 1rem;
@@ -175,5 +183,11 @@
   .pagination button {
     padding: 0.25rem 0.5rem;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    min-width: 1000px;
   }
 }

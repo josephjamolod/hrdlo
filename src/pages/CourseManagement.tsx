@@ -31,31 +31,33 @@ function CourseManagement() {
           </button>
         </div>
       </div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>NO</th>
-            <th>개강명</th>
-            <th>훈련일자</th>
-            <th>수정 / 삭제</th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses.map((course) => (
-            <tr key={course.id}>
-              <td>{course.id}</td>
-              <td>{course.title}</td>
-              <td>{course.period}</td>
-              <td>
-                <div className={styles.actions}>
-                  <button className={styles.editButton}>수정</button>
-                  <button className={styles.deleteButton}>삭제</button>
-                </div>
-              </td>
+      <div className={styles.tableWrapper}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>개강명</th>
+              <th>훈련일자</th>
+              <th>수정 / 삭제</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {courses.map((course) => (
+              <tr key={course.id}>
+                <td>{course.id}</td>
+                <td>{course.title}</td>
+                <td>{course.period}</td>
+                <td>
+                  <div className={styles.actions}>
+                    <button className={styles.editButton}>수정</button>
+                    <button className={styles.deleteButton}>삭제</button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className={styles.pagination}>
         <button>←</button>
         <button className={styles.active}>1</button>
