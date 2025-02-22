@@ -6,6 +6,7 @@
 
 .searchWrapper {
   margin-bottom: 1rem;
+  width: fit-content;
 }
 
 .searchWrapper input {

@@ -60,6 +60,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+}
+
+.activeIcon {
+  filter: invert(50%) sepia(86%) saturate(2310%) hue-rotate(331deg)
+    brightness(95%) contrast(100%);
+}
+
+.activeLabel {
+  color: #e91e55 !important;
 }
 
 /* Media query for mobile devices */
