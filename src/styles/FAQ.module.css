@@ -78,6 +78,18 @@
   font-weight: bold;
 }
 
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.15rem;
+    margin-top: 1rem;
+  }
+
+  .pagination button {
+    padding: 0.25rem 0.5rem;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 1400px) {
   .container {
     padding: 0 1rem;
