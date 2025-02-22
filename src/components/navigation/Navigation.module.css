@@ -6,7 +6,8 @@
   border: 2px solid #e1acac4d;
   max-width: 800px;
   margin: 0 auto;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 0rem;
+  margin-top: 90px;
 }
 
 .navItem {
@@ -28,8 +29,8 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   padding-bottom: 2px;
 }
 
@@ -62,6 +63,18 @@
 }
 
 /* Media query for mobile devices */
+@media (max-width: 1280px) {
+  .navigation {
+    max-width: 600px;
+    padding: 0rem;
+  }
+
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .navigation {
     grid-template-columns: repeat(3, 1fr);
@@ -76,5 +89,10 @@
 
   .navItem {
     width: 100%;
+  }
+
+  .icon {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }

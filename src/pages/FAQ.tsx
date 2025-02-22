@@ -1,14 +1,12 @@
 import { IoMdArrowDropdown } from "react-icons/io";
 
 import styles from "../styles/FAQ.module.css";
-import Navigation from "../components/navigation";
 import { Link } from "react-router-dom";
 import { faqs } from "../constant/faqs";
 
 function FAQ() {
   return (
     <div className={styles.container}>
-      <Navigation />
       <h1 className={styles.title}>FAQ</h1>
       <div className={styles.faqList}>
         {faqs.map((faq) => (

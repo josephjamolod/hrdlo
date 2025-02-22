@@ -1,22 +1,16 @@
-import Navigation from "../components/navigation";
 import { announcements } from "../constant/announcementData";
-import { IoSearchOutline } from "react-icons/io5";
+
 import styles from "../styles/Announcements.module.css";
 import { Link } from "react-router-dom";
+import SearchInput from "../components/searchInput";
 
 function Announcements() {
   return (
     <div className={styles.container}>
-      <Navigation />
       <div className={styles.content}>
         <h1 className={styles.title}>공지사항</h1>
         <div className={styles.searchWrapper}>
-          <IoSearchOutline className={styles.searchIcon} />
-          <input
-            type="text"
-            placeholder="검색어를 입력하세요."
-            className={styles.searchInput}
-          />
+          <SearchInput placeholder="검색어를 입력하세요." />
         </div>
         <table className={styles.table}>
           <thead>

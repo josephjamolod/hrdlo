@@ -1,7 +1,7 @@
 .container {
-  padding: 6rem 2rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
+  margin: 3rem 0;
+  padding: 0 2rem;
 }
 
 .content {
@@ -15,7 +15,7 @@
 
 .title {
   font-size: 24px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -31,19 +31,6 @@
   transform: translateY(-50%);
   color: #666;
   font-size: 18px;
-}
-
-.searchInput {
-  width: 300px;
-  padding: 8px 12px 8px 40px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-}
-
-.searchInput:focus {
-  outline: 1px solid #ffd0d0;
-  transition: all 0.3s ease;
 }
 
 .table {
