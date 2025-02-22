@@ -12,12 +12,15 @@ import AnnouncementDetail from "./pages/AnnouncementDetail";
 import FAQ from "./pages/FAQ";
 import FAQDetail from "./pages/FAQDetail";
 import CourseManagement from "./pages/CourseManagement";
+import HRDLOLayout from "./layout/HRDLOLayout";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route element={<RootLayout />}>
-        <Route index element={<HRDLOGuide />} />
+        <Route element={<HRDLOLayout />}>
+          <Route index element={<HRDLOGuide />} />
+        </Route>
         <Route path="/announcements">
           <Route index element={<Announcements />} />
           <Route path=":id" element={<AnnouncementDetail />} />
