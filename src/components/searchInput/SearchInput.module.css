@@ -1,0 +1,27 @@
+.searchGroup {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 130px;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.input:focus {
+  outline: 1px solid #ffd0d0;
+  transition: all 0.3s ease;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #666;
+}
