@@ -4,6 +4,7 @@ import trainee from "../assets/svg/trainee-registration/trainee.svg";
 import talk from "../assets/svg/trainee-registration/talk.svg";
 import sms from "../assets/svg/trainee-registration/SMS.svg";
 import sendMail from "../assets/svg/trainee-registration/send_mail.svg";
+import Button from "../components/Button";
 
 export default function TraineeRegistration() {
   return (
@@ -33,7 +34,7 @@ export default function TraineeRegistration() {
           </div>
         </div>
         <div className={styles.buttonGroup}>
-          <button className={styles.grayButton}>훈련생 삭제</button>
+          <Button className={styles.gray}>훈련생 삭제</Button>
         </div>
       </div>
 

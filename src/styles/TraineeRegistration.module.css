@@ -76,18 +76,6 @@
   gap: 0.5rem;
 }
 
-.grayButton {
-  padding: 0.5rem 2rem;
-  background-color: #f1f0e8;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.grayButton:hover {
-  background-color: #eeede2;
-}
-
 .lightOrangeButton:hover {
   background-color: rgb(250, 76, 61);
 }
