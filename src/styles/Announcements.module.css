@@ -1,11 +1,17 @@
 .container {
-  max-width: 1400px;
-  margin: 3rem 0;
-  padding: 0 2rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .content {
   margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content h1 {
@@ -20,8 +26,10 @@
 }
 
 .searchWrapper {
-  position: relative;
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-self: start;
 }
 
 .searchIcon {
@@ -33,8 +41,15 @@
   font-size: 18px;
 }
 
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
 .table {
   width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   margin-top: 1rem;
   border: 1px solid #eee;
@@ -101,5 +116,11 @@
   .pagination button {
     padding: 0.25rem 0.5rem;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table {
+    min-width: 1000px;
   }
 }

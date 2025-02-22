@@ -12,30 +12,32 @@ function Announcements() {
         <div className={styles.searchWrapper}>
           <SearchInput placeholder="검색어를 입력하세요." />
         </div>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>NO</th>
-              <th>제목</th>
-              <th>날짜</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {announcements.map((announcement, index) => (
-              <tr key={index}>
-                <td>{announcement.id}</td>
-                <td className={styles.titleCell}>{announcement.title}</td>
-                <td>{announcement.date}</td>
-                <td>
-                  <Link to={`/announcements/${announcement.id}`}>
-                    <button className={styles.arrowButton}>→</button>
-                  </Link>
-                </td>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>NO</th>
+                <th>제목</th>
+                <th>날짜</th>
+                <th></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {announcements.map((announcement, index) => (
+                <tr key={index}>
+                  <td>{announcement.id}</td>
+                  <td className={styles.titleCell}>{announcement.title}</td>
+                  <td>{announcement.date}</td>
+                  <td>
+                    <Link to={`/announcements/${announcement.id}`}>
+                      <button className={styles.arrowButton}>→</button>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className={styles.pagination}>
           <button>←</button>
           <button className={styles.active}>1</button>
