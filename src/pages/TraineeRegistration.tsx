@@ -5,8 +5,14 @@ import talk from "../assets/svg/trainee-registration/talk.svg";
 import sms from "../assets/svg/trainee-registration/SMS.svg";
 import sendMail from "../assets/svg/trainee-registration/send_mail.svg";
 import Button from "../components/Button";
+import Pagination from "../components/Pagination";
+import { useState } from "react";
 
 export default function TraineeRegistration() {
+  // Add state for pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 7; // This could be calculated based on your data
+
   return (
     <div className={styles.container}>
       <div className={styles.controls}>
@@ -77,17 +83,12 @@ export default function TraineeRegistration() {
         </table>
       </div>
 
-      <div className={styles.pagination}>
-        <button>←</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>→</button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        className={styles.pagination}
+      />
     </div>
   );
 }
