@@ -1,7 +1,14 @@
+import { useState } from "react";
 import SearchInput from "../components/searchInput";
+import ConsultationModal from "../components/ConsultationModal";
 import styles from "../styles/ConsultationManagement.module.css";
 
 export default function ConsultationManagement() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className={styles.container}>
       <div className={styles.searchWrapper}>
@@ -35,7 +42,12 @@ export default function ConsultationManagement() {
                   <td rowSpan={2}>홍길동</td>
                   <td rowSpan={2}>정상</td>
                   <td rowSpan={2}>
-                    <button className={styles.consultButton}>상담일정</button>
+                    <button
+                      className={styles.consultButton}
+                      onClick={handleOpenModal}
+                    >
+                      상담일정
+                    </button>
                   </td>
                   {[...Array(12)].map((_, idx) => (
                     <td
@@ -65,6 +77,8 @@ export default function ConsultationManagement() {
         ))}
         <button>→</button>
       </div>
+
+      <ConsultationModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 }
