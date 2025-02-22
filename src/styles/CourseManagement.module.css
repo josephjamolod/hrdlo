@@ -1,0 +1,166 @@
+.container {
+  max-width: 1400px;
+  margin: 3rem 0;
+  padding: 0 2rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  margin: 2rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.selectGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 100px;
+  color: #666;
+}
+
+.searchGroup {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.createButton {
+  padding: 0.5rem 1.5rem;
+  background-color: #c97777;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.createButton:hover {
+  background-color: #af6868;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  margin-top: 1rem;
+}
+
+.table thead {
+  background-color: #ffd0d0;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* Specific column alignments */
+.table th:first-child,
+.table td:first-child {
+  width: 100px;
+  text-align: center;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  text-align: left;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  text-align: right;
+  width: 200px;
+}
+
+.table th:last-child,
+.table td:last-child {
+  width: 200px;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.editButton,
+.deleteButton {
+  padding: 0.25rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  min-width: 60px;
+}
+
+.editButton {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.editButton:hover {
+  background-color: #e0e0e0;
+}
+
+.deleteButton {
+  background-color: #c97777;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #af6868;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.pagination button.active {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
