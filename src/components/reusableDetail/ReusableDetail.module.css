@@ -1,5 +1,6 @@
 .container {
   padding: 1rem;
+  padding-top: 8rem;
   width: 100%;
   max-width: 1600px;
   margin: 0 auto;
@@ -22,7 +23,7 @@
   font-size: 18px;
   color: #333;
   margin: 0;
-  flex-grow: 1;
+
   margin-left: 2rem;
 }
 
