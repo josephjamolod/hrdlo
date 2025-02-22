@@ -1,0 +1,93 @@
+.container {
+  padding: 1rem;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+
+  align-items: center;
+}
+
+.table {
+  min-width: 100%; /* Ensures table maintains minimum width */
+  border-collapse: separate;
+  border-spacing: 0.75rem;
+  table-layout: fixed;
+}
+
+@media (max-width: 1000px) {
+  .table {
+    min-width: 1000px;
+    border: 1px solid #e1acac;
+  }
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
+  text-align: center;
+  height: 20px;
+}
+
+.table th {
+  background-color: white;
+  font-weight: normal;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Empty header cell */
+.table th:first-child {
+  background-color: white;
+  border-bottom: none;
+}
+
+.timeCell {
+  background-color: white;
+  font-size: 14px;
+  white-space: nowrap;
+  border: none;
+  width: 130px;
+  padding: 0.5rem;
+}
+
+.lunchTime {
+  background-color: #e1acac;
+  border: none;
+}
+
+.lunchTime {
+  background-color: #c97777;
+  border: none;
+  padding: 0.5rem;
+  color: white;
+}
+
+.normalCell {
+  background-color: #dedede;
+  border: none;
+}
+
+.saveButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.saveButton {
+  text-align: center;
+  margin-top: 1rem;
+  color: white;
+  background-color: #f5f5f5;
+  padding: 0.5rem 2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #70707080;
+}
