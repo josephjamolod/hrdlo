@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import SearchInput from "../components/searchInput";
 import ConsultationModal from "../components/ConsultationModal";
@@ -37,7 +38,7 @@ export default function ConsultationManagement() {
           </thead>
           <tbody>
             {[...Array(5)].map((_, index) => (
-              <>
+              <React.Fragment key={index}>
                 <tr key={`${index}-1`}>
                   <td rowSpan={2}>홍길동</td>
                   <td rowSpan={2}>정상</td>
@@ -64,7 +65,7 @@ export default function ConsultationManagement() {
                     ></td>
                   ))}
                 </tr>
-              </>
+              </React.Fragment>
             ))}
           </tbody>
         </table>

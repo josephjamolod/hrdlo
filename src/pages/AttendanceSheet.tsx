@@ -1,3 +1,4 @@
+import React from "react";
 import Button from "../components/Button";
 import SearchInput from "../components/searchInput";
 import styles from "../styles/AttendanceSheet.module.css";
@@ -74,7 +75,7 @@ export default function AttendanceSheet() {
 
           <tbody>
             {[...Array(3)].map((_, rowIndex) => (
-              <>
+              <React.Fragment key={rowIndex}>
                 <tr key={`${rowIndex}-1`}>
                   <td rowSpan={4} className={styles.grayCell}>
                     <input type="checkbox" />
@@ -142,7 +143,7 @@ export default function AttendanceSheet() {
                   ))}
                   <td className={styles.grayCell}>-</td>
                 </tr>
-              </>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
