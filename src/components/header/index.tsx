@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import { IoCloseOutline } from "react-icons/io5";
@@ -10,10 +10,28 @@ import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -28,7 +46,11 @@ const Header = () => {
       </div>
 
       {/* Right Buttons */}
-      <div className={styles.rightButtons}>
+      <div
+        className={`${styles.rightButtons} ${
+          isMobile ? styles.hideOnMobile : ""
+        }`}
+      >
         <button>출강기관별(이용)</button>
         <hr />
         <button>내 로그아웃</button>
@@ -101,6 +123,26 @@ const Header = () => {
               개강관리
             </div>
           </NavLink>
+          {/* when in mobile size display this */}
+          {isMobile && (
+            <>
+              <hr style={{ margin: "1rem" }} />
+              <NavLink
+                style={{ textDecoration: "none" }}
+                to="/course-management"
+                onClick={toggleMenu}
+              >
+                <button className={styles.userAction}>출강기관별(이용)</button>
+              </NavLink>
+              <NavLink
+                style={{ textDecoration: "none" }}
+                to="/course-management"
+                onClick={toggleMenu}
+              >
+                <button className={styles.userAction}>내 로그아웃</button>
+              </NavLink>
+            </>
+          )}
         </nav>
       </div>
 
