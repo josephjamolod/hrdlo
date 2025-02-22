@@ -1,8 +1,12 @@
 import SearchInput from "../components/searchInput";
-
+import Pagination from "../components/Pagination";
+import { useState } from "react";
 import styles from "../styles/HRDLOGuide.module.css";
 
 function HRDLOGuide() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 7; // This could be calculated based on your data
+
   return (
     <div className={styles.container}>
       <div className={styles.searchWrapper}>
@@ -83,17 +87,12 @@ function HRDLOGuide() {
         </table>
       </div>
 
-      <div className={styles.pagination}>
-        <button>←</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>→</button>
-      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        className={styles.pagination}
+      />
     </div>
   );
 }
