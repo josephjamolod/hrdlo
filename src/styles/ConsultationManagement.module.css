@@ -1,0 +1,108 @@
+.container {
+  padding: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.searchWrapper {
+  margin-bottom: 1rem;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.table {
+  min-width: 1200px;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  border: 1px solid #e0e0e0;
+  padding: 0.75rem;
+  text-align: center;
+  height: 20px;
+}
+
+.table th {
+  background-color: #ffd0d0;
+  font-weight: normal;
+  padding: 0.5rem;
+  border: 1px solid #e1acac;
+}
+
+.consultDateHeader {
+  background-color: #ca8787 !important;
+}
+
+.consultButton {
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.consultButton:hover {
+  background-color: #a71717;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.pagination button:hover {
+  background-color: #f5f5f5;
+}
+
+/* Fixed widths for specific columns */
+.table th:first-child,
+.table td:first-child {
+  width: 100px; /* 훈련생 column */
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 80px; /* 상태 column */
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3),
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 120px; /* 최초 상담일, 상담일 1 columns */
+}
+
+/* All other columns */
+.table th:nth-child(n + 5),
+.table td:nth-child(n + 5) {
+  width: 80px;
+}
+
+@media (max-width: 1200px) {
+  .table {
+    min-width: 1500px;
+  }
+}
+
+.consultorCell {
+  background-color: #f5f5f5;
+}
