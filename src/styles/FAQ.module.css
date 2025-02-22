@@ -1,5 +1,6 @@
 .container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px;
   margin: 3rem auto 0;
   padding: 0 2rem;
 }
@@ -75,4 +76,34 @@
 .pagination button.active {
   background-color: #f5f5f5;
   font-weight: bold;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 1rem;
+    margin: 2rem auto 0;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 1rem;
+  }
+
+  .questionButton {
+    padding: 0.75rem;
+  }
+
+  .question {
+    font-size: 14px;
+  }
+
+  .questionMark {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
 }
