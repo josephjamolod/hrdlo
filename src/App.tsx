@@ -13,6 +13,11 @@ import FAQ from "./pages/FAQ";
 import FAQDetail from "./pages/FAQDetail";
 import CourseManagement from "./pages/CourseManagement";
 import HRDLOLayout from "./layout/HRDLOLayout";
+import TraineeRegistration from "./pages/TraineeRegistration";
+import AttendanceSheet from "./pages/AttendanceSheet";
+import TimeTable from "./pages/TimeTable";
+import ConsultationManagement from "./pages/ConsultationManagement";
+import CBT from "./pages/CBT";
 
 function App() {
   const router = createBrowserRouter(
@@ -20,6 +25,17 @@ function App() {
       <Route element={<RootLayout />}>
         <Route element={<HRDLOLayout />}>
           <Route index element={<HRDLOGuide />} />
+          <Route
+            path="/trainee-registration"
+            element={<TraineeRegistration />}
+          />
+          <Route path="/attendance-sheet" element={<AttendanceSheet />} />
+          <Route path="/time-table" element={<TimeTable />} />
+          <Route
+            path="/consultation-management"
+            element={<ConsultationManagement />}
+          />
+          <Route path="/CBT" element={<CBT />} />
         </Route>
         <Route path="/announcements">
           <Route index element={<Announcements />} />
