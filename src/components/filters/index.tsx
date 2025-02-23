@@ -41,7 +41,7 @@ const Filters = () => {
               pathname === "/time-table") && (
               <button className={styles.downloadButton}>
                 <img src={excel} width={20} height={20} alt="download" />
-                <span>엑셀 다운로드</span>
+                <span>엑셀 등록</span>
               </button>
             )}
           </div>
