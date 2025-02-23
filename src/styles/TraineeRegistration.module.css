@@ -124,11 +124,10 @@
 }
 
 .table {
-  min-width: 1200px;
+  width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
   table-layout: fixed;
-  width: 100%;
   max-width: 1600px;
 }
 
@@ -141,6 +140,55 @@
 
 .table th {
   background-color: #ffd0d0;
+}
+
+/* Column widths */
+.table th:first-child,
+.table td:first-child {
+  /* Checkbox column */
+  width: 50px;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  /* NO column */
+  width: 60px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  /* Name column */
+  width: 100px;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  /* ID column */
+  width: 120px;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  /* Birth date column */
+  width: 120px;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6) {
+  /* Phone column */
+  width: 150px;
+}
+
+.table th:nth-child(7),
+.table td:nth-child(7) {
+  /* Course column */
+  width: 200px;
+}
+
+.table th:last-child,
+.table td:last-child {
+  /* Edit column */
+  width: 100px;
 }
 
 .table tbody tr:hover {
@@ -260,5 +308,14 @@
   .pagination {
     gap: 0.15rem;
     margin-top: 1rem;
+  }
+
+  .tableWrapper {
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .table {
+    min-width: 1000px; /* Ensure table scrolls on smaller screens */
   }
 }
