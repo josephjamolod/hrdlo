@@ -11,11 +11,9 @@ const CourseForm = ({ onCancel, onSubmit }: CourseFormProps) => {
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <label>개강명</label>
-          <input
-            className={styles.courseNameInput}
-            type="text"
-            placeholder="개강명을 입력하세요"
-          />
+          <div className={styles.dateRange}>
+            <input type="text" placeholder="개강명을 입력하세요" />
+          </div>
         </div>
 
         <div className={styles.formGroup}>
@@ -31,7 +29,7 @@ const CourseForm = ({ onCancel, onSubmit }: CourseFormProps) => {
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <label>교육 구분</label>
-          <select>
+          <select className={styles.courseTypeSelect}>
             <option>선택</option>
           </select>
         </div>
@@ -49,7 +47,7 @@ const CourseForm = ({ onCancel, onSubmit }: CourseFormProps) => {
       <div className={styles.formRow}>
         <div className={styles.formGroup}>
           <label>비용 종류</label>
-          <select>
+          <select className={styles.courseTypeSelect}>
             <option>선택</option>
           </select>
         </div>

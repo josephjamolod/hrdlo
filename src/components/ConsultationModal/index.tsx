@@ -27,7 +27,7 @@ export default function ConsultationModal({
           </button>
         </div>
 
-        <div className={styles.modalContent}>
+        <form className={styles.modalContent}>
           <div className={styles.formRow}>
             <div className={styles.formGroup}>
               <label>상담일</label>
@@ -58,14 +58,13 @@ export default function ConsultationModal({
             <label>지도관리 및 피드백</label>
             <textarea rows={4}></textarea>
           </div>
-        </div>
-
-        <div className={styles.modalFooter}>
-          <button onClick={onClose} className={styles.cancelButton}>
-            취소
-          </button>
-          <button className={styles.submitButton}>상담 등록</button>
-        </div>
+          <div className={styles.modalFooter}>
+            <button onClick={onClose} className={styles.cancelButton}>
+              취소
+            </button>
+            <button className={styles.submitButton}>상담 등록</button>
+          </div>
+        </form>
       </div>
     </div>
   );

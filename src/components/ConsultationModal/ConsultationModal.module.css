@@ -13,10 +13,11 @@
 
 .modal {
   background: white;
-  width: 100%;
+  width: 90%;
   max-width: 700px;
-
-  overflow: hidden;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .modalHeader {
@@ -60,13 +61,23 @@
 }
 
 .modalContent {
-  padding: 1.5rem 3rem 0 3rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .formRow {
   display: flex;
+
   gap: 2rem;
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .formRow .formGroup {
@@ -82,6 +93,7 @@
   display: block;
   margin-bottom: 0.5rem;
   color: #333;
+  font-size: 14px;
 }
 
 .formGroup input,
@@ -109,11 +121,13 @@
 }
 
 .modalFooter {
-  padding: 1rem 3rem;
+  padding: 1rem 0;
   display: flex;
+
   justify-content: space-between;
   gap: 1rem;
   border-top: 1px solid #e0e0e0;
+  background: white;
 }
 
 .cancelButton,
@@ -124,6 +138,16 @@
   color: white;
   cursor: pointer;
   font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .modalFooter {
+    flex-direction: column;
+  }
+  .cancelButton,
+  .submitButton {
+    width: 100%;
+  }
 }
 
 .cancelButton {
