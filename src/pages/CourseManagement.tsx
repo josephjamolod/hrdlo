@@ -5,12 +5,15 @@ import Modal from "../components/modal";
 import CourseForm from "../components/courseForm";
 
 import SearchInput from "../components/searchInput";
+import Pagination from "../components/Pagination";
 
 function CourseManagement() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 7;
 
   return (
-    <div className={styles.container}>
+    <>
       <h1 className={styles.title}>개강관리</h1>
       <div className={styles.controls}>
         <div className={styles.filters}>
@@ -31,59 +34,56 @@ function CourseManagement() {
           </button>
         </div>
       </div>
-      <div className={styles.tableWrapper}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>NO</th>
-              <th>개강명</th>
-              <th>훈련일자</th>
-              <th>수정 / 삭제</th>
-            </tr>
-          </thead>
-          <tbody>
-            {courses.map((course) => (
-              <tr key={course.id}>
-                <td>{course.id}</td>
-                <td>{course.title}</td>
-                <td>{course.period}</td>
-                <td>
-                  <div className={styles.actions}>
-                    <button className={styles.editButton}>수정</button>
-                    <button className={styles.deleteButton}>삭제</button>
-                  </div>
-                </td>
+      <div className={styles.container}>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>NO</th>
+                <th>개강명</th>
+                <th>훈련일자</th>
+                <th>수정 / 삭제</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className={styles.pagination}>
-        <button>←</button>
-        <button className={styles.active}>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>→</button>
-      </div>
+            </thead>
+            <tbody>
+              {courses.map((course) => (
+                <tr key={course.id}>
+                  <td>{course.id}</td>
+                  <td>{course.title}</td>
+                  <td>{course.period}</td>
+                  <td>
+                    <div className={styles.actions}>
+                      <button className={styles.editButton}>수정</button>
+                      <button className={styles.deleteButton}>삭제</button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title="개강 생성"
-      >
-        <CourseForm
-          onCancel={() => setIsModalOpen(false)}
-          onSubmit={() => {
-            // Handle form submission
-            setIsModalOpen(false);
-          }}
-        />
-      </Modal>
-    </div>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          title="개강 생성"
+        >
+          <CourseForm
+            onCancel={() => setIsModalOpen(false)}
+            onSubmit={() => {
+              // Handle form submission
+              setIsModalOpen(false);
+            }}
+          />
+        </Modal>
+      </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        className={styles.pagination}
+      />
+    </>
   );
 }
 

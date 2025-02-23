@@ -9,9 +9,8 @@ import Pagination from "../components/Pagination";
 import { useState } from "react";
 
 export default function TraineeRegistration() {
-  // Add state for pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 7; // This could be calculated based on your data
+  const totalPages = 7;
 
   return (
     <>
