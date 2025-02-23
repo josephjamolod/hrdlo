@@ -57,12 +57,30 @@
   width: 80px;
 }
 
+.searchInputWrapper {
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .searchInputWrapper {
+    min-width: 100%;
+  }
+}
+
 .searchWrapper {
   width: 100%;
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .searchWrapper {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
 }
 
 .table th,
