@@ -10,14 +10,17 @@ const Filters = () => {
     <div className={styles.container}>
       <div className={styles.filterWrapper}>
         <div className={styles.filterGroup}>
-          <select className={styles.select}>
-            <option value="">연차</option>
-          </select>
-          <select className={styles.select}>
-            <option value="">개강일</option>
-          </select>
-
-          <SearchInput placeholder="키워드를 입력해 주세요" />
+          <div className={styles.dropdownGroup}>
+            <select className={styles.select}>
+              <option value="">연차</option>
+            </select>
+            <select className={styles.select}>
+              <option value="">개강일</option>
+            </select>
+          </div>
+          <div className={styles.searchInputWrapper}>
+            <SearchInput placeholder="키워드를 입력해 주세요" />
+          </div>
         </div>
         <div className={styles.filterGroup}>
           {(pathname === "/" ||
@@ -27,19 +30,21 @@ const Filters = () => {
               <option>출석부 - 기본일일</option>
             </select>
           )}
-          {pathname !== "/consultation-management" && (
-            <button className={styles.downloadButton}>
-              <img src={excel} width={20} height={20} alt="download" />
-              <span>엑셀 다운로드</span>
-            </button>
-          )}
-          {(pathname === "/trainee-registration" ||
-            pathname === "/time-table") && (
-            <button className={styles.downloadButton}>
-              <img src={excel} width={20} height={20} alt="download" />
-              <span>엑셀 다운로드</span>
-            </button>
-          )}
+          <div className={styles.buttonGroup}>
+            {pathname !== "/consultation-management" && (
+              <button className={styles.downloadButton}>
+                <img src={excel} width={20} height={20} alt="download" />
+                <span>엑셀 다운로드</span>
+              </button>
+            )}
+            {(pathname === "/trainee-registration" ||
+              pathname === "/time-table") && (
+              <button className={styles.downloadButton}>
+                <img src={excel} width={20} height={20} alt="download" />
+                <span>엑셀 다운로드</span>
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

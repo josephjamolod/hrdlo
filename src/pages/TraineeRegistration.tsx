@@ -14,7 +14,7 @@ export default function TraineeRegistration() {
   const totalPages = 7; // This could be calculated based on your data
 
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.controls}>
         <div className={styles.buttonContainer}>
           <div className={styles.buttonGroup}>
@@ -41,54 +41,54 @@ export default function TraineeRegistration() {
             </button>
           </div>
         </div>
-        <div className={styles.buttonGroup}>
+        <div className={styles.deleteBtnWrapper}>
           <Button className={styles.gray}>훈련생 삭제</Button>
         </div>
       </div>
-
-      <div className={styles.tableWrapper}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>
-                <input type="checkbox" />
-              </th>
-              <th>NO</th>
-              <th>이름</th>
-              <th>아이디</th>
-              <th>생년월일</th>
-              <th>전화번호</th>
-              <th>교육과정</th>
-              <th>수정</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[...Array(12)].map((_, index) => (
-              <tr key={index}>
-                <td>
+      <div className={styles.container}>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>
                   <input type="checkbox" />
-                </td>
-                <td>1</td>
-                <td>홍길동</td>
-                <td>아이디</td>
-                <td>생년월일</td>
-                <td>010-0000-0000</td>
-                <td>구분</td>
-                <td>
-                  <button className={styles.editButton}>수정</button>
-                </td>
+                </th>
+                <th>NO</th>
+                <th>이름</th>
+                <th>아이디</th>
+                <th>생년월일</th>
+                <th>전화번호</th>
+                <th>교육과정</th>
+                <th>수정</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {[...Array(12)].map((_, index) => (
+                <tr key={index}>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td>1</td>
+                  <td>홍길동</td>
+                  <td>아이디</td>
+                  <td>생년월일</td>
+                  <td>010-0000-0000</td>
+                  <td>구분</td>
+                  <td>
+                    <button className={styles.editButton}>수정</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={setCurrentPage}
         className={styles.pagination}
       />
-    </div>
+    </>
   );
 }

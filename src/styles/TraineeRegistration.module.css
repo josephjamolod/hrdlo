@@ -1,7 +1,7 @@
 .container {
   padding: 1rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -9,25 +9,41 @@
 .controls {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 1rem;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 0 1rem;
 }
 
 .buttonGroup {
   display: flex;
   gap: 0.5rem;
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.deleteBtnWrapper {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .deleteBtnWrapper {
+    justify-content: flex-start;
+  }
 }
 
 .buttonContainer {
   display: flex;
   gap: 1.5rem;
-  display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .redButton {
@@ -102,6 +118,9 @@
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .table {
@@ -109,6 +128,8 @@
   border-collapse: collapse;
   margin-bottom: 2rem;
   table-layout: fixed;
+  width: 100%;
+  max-width: 1600px;
 }
 
 .table th,
@@ -169,10 +190,64 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .searchWrapper {
+    width: 100%;
+  }
+
+  /* Make all buttons full width on mobile */
+  .redButton,
+  .orangeButton,
+  .lightOrangeButton,
+  .lightestOrangeButton {
+    width: 100%;
+    padding: 0.75rem; /* Larger touch target */
+    justify-content: center;
+  }
+
+  /* Adjust icon sizes for mobile */
+  .redButton img,
+  .orangeButton img,
+  .lightOrangeButton img,
+  .lightestOrangeButton img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 @media (max-width: 480px) {
-  .pagination {
-    gap: 0.15rem;
-    margin-top: 1rem;
+  .controls {
+    gap: 0.75rem;
+  }
+
+  .buttonGroup {
+    gap: 0.5rem;
+  }
+
+  /* Adjust button text size */
+  .redButton,
+  .orangeButton,
+  .lightOrangeButton,
+  .lightestOrangeButton {
+    font-size: 14px;
   }
 
   .pagination button {
@@ -182,7 +257,8 @@
 }
 
 @media (max-width: 1200px) {
-  .table {
-    min-width: 1500px;
+  .pagination {
+    gap: 0.15rem;
+    margin-top: 1rem;
   }
 }

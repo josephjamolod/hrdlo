@@ -7,18 +7,37 @@
 
 .filterWrapper {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   border-bottom: 1px solid #eee;
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .filterGroup {
   display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dropdownGroup {
+  display: flex;
   gap: 0.5rem;
   align-items: center;
+  flex-wrap: wrap;
+}
 
-  padding: 1rem;
+.searchInputWrapper {
+  min-width: 200px;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .searchInputWrapper {
+    min-width: 100%;
+  }
 }
 
 .select {
@@ -30,14 +49,48 @@
   font-size: 14px;
 }
 
+.mainSelect {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 160px;
+  color: #333;
+  font-size: 14px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.downloadButton {
+  padding: 0.5rem 1rem;
+  background-color: #c97777;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.downloadButton:hover {
+  background-color: #b66868;
+}
+
 .dateRange {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
   gap: 2rem;
   font-weight: 400;
   border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -53,28 +106,49 @@
   color: #666;
 }
 
-.mainSelect {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  min-width: 160px;
-  color: #333;
-  font-size: 14px;
+@media (max-width: 768px) {
+  .filterWrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filterGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dropdownGroup {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .buttonGroup {
+    justify-content: flex-start;
+  }
+
+  .dateRange {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .mainSelect {
+    width: 100%;
+  }
 }
 
-.downloadButton {
-  padding: 0.5rem 1rem;
-  background-color: #c97777;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+@media (max-width: 480px) {
+  .dropdownGroup {
+    flex-direction: column;
+    width: 100%;
+  }
 
-.downloadButton:hover {
-  background-color: #b66868;
+  .select {
+    width: 100%;
+  }
+
+  .downloadButton {
+    width: 100%;
+    justify-content: center;
+  }
 }
