@@ -36,8 +36,6 @@
 }
 
 .formGroup select {
-  appearance: none;
-  background-image: url("data:image/svg+xml,..."); /* Add dropdown arrow */
   width: 100%;
 }
 

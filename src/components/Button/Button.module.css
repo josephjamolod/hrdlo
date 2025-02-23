@@ -6,6 +6,12 @@
   font-size: 14px;
 }
 
+@media (max-width: 768px) {
+  .button {
+    padding: 0.5rem 1rem;
+  }
+}
+
 .button:hover {
   background-color: #e5e5e5;
 }

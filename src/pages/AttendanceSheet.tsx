@@ -11,7 +11,7 @@ export default function AttendanceSheet() {
     <>
       <div className={styles.searchWrapper}>
         <SearchInput placeholder="훈련생을 검색하세요." />
-        <Button className={styles.gray}>훈련생 삭제</Button>
+        <Button>훈련생 삭제</Button>
       </div>
       <div className={styles.container}>
         <div className={styles.tableWrapper}>
